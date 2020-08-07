@@ -1,1 +1,11 @@
-<p>todo works!</p>
+<mat-card class="todo" [class.completed]="todo.completed">
+  <div class="todo-left">
+    <input type="checkbox" (change)="updateTodo(todo)" [checked]="todo.completed">
+    <span>{{todo.title}}</span>
+  </div>
+
+  <button  mat-icon-button color="warn" (click)="remove()">
+    <mat-icon class="todo-btn">clear</mat-icon>
+  </button>
+
+</mat-card>

@@ -1,1 +1,27 @@
-<p>todos-page works!</p>
+<mat-form-field class="form">
+  <mat-label>Create todo</mat-label>
+  <input matInput type="text"
+         class="form-input"
+         [(ngModel)]="input"
+         (keyup.enter)="createTodo()"
+  >
+
+  <button class="form-btn"
+          mat-button
+          matSuffix
+          mat-icon-button
+          type="submit"
+          *ngIf="input"
+          (click)="createTodo()"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+</mat-form-field>
+
+<div
+  class="todos"
+  *ngFor="let todo of todos"
+>
+  <app-todo [todo]="todo" (onRemove)="removeTodo($event)"></app-todo>
+</div>
+

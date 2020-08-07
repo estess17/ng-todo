@@ -1,0 +1,37 @@
+.todo {
+  margin: 0 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &-left {
+    display: flex;
+
+    input {
+      margin-right: 0.5rem;
+      cursor: pointer;
+    }
+  }
+
+  &-btn {
+    font-size: 1.3rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover {
+    transition: all 0.3s;
+    box-shadow: 0 7px 14px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
+
+    .todo-btn {
+      opacity: 1;
+    }
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #acacac;
+}
